@@ -1,1 +1,1 @@
-shell.run("pastebin run W5ZkVYSi knijn livefloppy path=/disk")
+shell.run("pastebin run W5ZkVYSi knijn livefloppy main disk")

@@ -26,7 +26,7 @@ fs.symlink("disk/sda/rom", "rom")
 -- Set drive as root partition
 --fs.symlink("", "disk/sda")
 
-if fs.exists("startup.lua")
+if fs.exists("startup.lua") then
   shell.run("startup.lua")
 end
 
