@@ -13,7 +13,12 @@ end
 do
   write("Pass: ")
   local pass = read("*")
-  fs.encrypt("disk/sda", pass)
+  local err = pcall(fs.encrypt, "disk/sda", pass)
+  if err then
+    print("Incorrect password")
+    os.sleep(1)
+    os.reboot()
+  end
   fs.flatten("disk/sda")
 end
 
@@ -24,7 +29,7 @@ end
 fs.symlink("disk/sda/rom", "rom")
 
 -- Set drive as root partition
---fs.symlink("", "disk/sda")
+fs.symlink("", "disk/sda")
 
 if fs.exists("startup.lua") then
   shell.run("startup.lua")
