@@ -34,7 +34,6 @@ function utils.makeDir(args)
 end
 
 function utils.makeFile(args)
-    local dir = utils.makeDir()
     local name = args[#args]
     args[#args] = nil
     local dir = utils.makeDir(args)

@@ -13,8 +13,8 @@ end
 do
   write("Pass: ")
   local pass = read("*")
-  local err = pcall(fs.encrypt, "disk/sda", pass)
-  if err then
+  local succ = pcall(fs.encrypt, "disk/sda", pass)
+  if not succ then
     print("Incorrect password")
     os.sleep(1)
     os.reboot()
